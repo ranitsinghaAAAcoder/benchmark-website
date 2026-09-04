@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Benchmark Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- STEP 1: CPU, GPU, Game Selection -->
+        <div id="step1" class="step active">
+            <h1>🎮 Game Benchmark Finder</h1>
+            <p class="subtitle">Find FPS for your gaming setup</p>
+            
+            <div class="form-group">
+                <label>Select CPU:</label>
+                <input type="text" id="cpuSearch" placeholder="Search CPU (e.g., Intel i9-13900K)...">
+                <select id="cpuSelect" class="dropdown">
+                    <option value="">Loading CPUs...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select GPU:</label>
+                <input type="text" id="gpuSearch" placeholder="Search GPU (e.g., RTX 4090)...">
+                <select id="gpuSelect" class="dropdown">
+                    <option value="">Loading GPUs...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Game:</label>
+                <input type="text" id="gameSearch" placeholder="Search Game (e.g., Cyberpunk 2077)...">
+                <select id="gameSelect" class="dropdown">
+                    <option value="">Loading Games...</option>
+                </select>
+            </div>
+
+            <button id="nextBtn" class="btn-next">Next →</button>
+        </div>
+
+        <!-- STEP 2: Settings Selection -->
+        <div id="step2" class="step">
+            <h1>⚙️ Game Settings</h1>
+            <p class="subtitle" id="gameTitle">Selected Game</p>
+            
+            <div class="settings-container">
+                <!-- Resolution -->
+                <div class="setting-group">
+                    <label>Resolution:</label>
+                    <div id="resolutionOptions" class="options"></div>
+                </div>
+
+                <!-- Graphics Quality -->
+                <div class="setting-group">
+                    <label>Graphics Quality:</label>
+                    <div id="qualityOptions" class="options"></div>
+                </div>
+
+                <!-- Ray Tracing -->
+                <div class="setting-group">
+                    <label>Ray Tracing:</label>
+                    <div id="rayTracingOptions" class="options"></div>
+                </div>
+
+                <!-- Upscaling -->
+                <div class="setting-group">
+                    <label>Upscaling:</label>
+                    <div id="upscalingOptions" class="options"></div>
+                </div>
+            </div>
+
+            <!-- FPS Result -->
+            <div id="fpsResult" class="fps-result hidden">
+                <h2>Expected Performance</h2>
+                <div class="fps-display">
+                    <p id="fpsNumber" class="fps-number">0 FPS</p>
+                    <p id="fpsSource" class="fps-source">Source: Data aggregated from benchmarks</p>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="backBtn" class="btn-back">← Back</button>
+                <button id="calculateBtn" class="btn-calculate">Calculate FPS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
